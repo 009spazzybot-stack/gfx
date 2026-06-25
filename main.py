@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from config import TOKEN
 
+
 intents = discord.Intents.all()
 
 bot = commands.Bot(
@@ -10,11 +11,18 @@ bot = commands.Bot(
 )
 
 
+async def setup_hook():
+    await bot.load_extension(
+        "systems.ai_chat"
+    )
+
+
+bot.setup_hook = setup_hook
+
+
 @bot.event
 async def on_ready():
-    print(
-        f"Logged in as {bot.user}"
-    )
+    print(f"Logged in as {bot.user}")
 
     await bot.tree.sync()
 
