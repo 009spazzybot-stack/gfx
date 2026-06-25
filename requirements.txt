@@ -1,0 +1,12 @@
+discord.py
+python-dotenv
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+pillow
+aiohttp
+google-api-python-client
+openai
+ffmpeg-python
+jinja2
